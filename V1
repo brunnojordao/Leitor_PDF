@@ -1,6 +1,8 @@
 from PyPDF2 import PdfReader
 
-reader = PdfReader("BALANCETE - PETRUZ 2024.pdf")
+print("Caminho do Arquivo: ")
+caminho = input()
+reader = PdfReader(caminho)
 number_of_pages = str(len(reader.pages))
 
 for counter in reader.pages:

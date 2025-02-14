@@ -1,10 +1,13 @@
 from PyPDF2 import PdfReader
 
-reader = PdfReader("balancete exemplo.pdf")
+reader = PdfReader("BALANCETE - PETRUZ 2024.pdf")
 number_of_pages = str(len(reader.pages))
-page = reader.pages[0]
-text = page.extract_text()
 
+for counter in reader.pages:
+    page = counter
+    text = page.extract_text()
+    
+    #Escreve o conteúdo das páginas em um txt
+    arquivo = open('arquivo.txt','a')
+    arquivo.write(text)
 
-arquivo = open('arquivo.txt','w')
-arquivo.write(text)
